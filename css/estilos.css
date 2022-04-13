@@ -1,0 +1,21 @@
+.borde_red {
+	border: 8px solid white;
+	height: 180px;
+	background-color: #a5a5b6;
+}
+
+.esquina_redonda_izq {
+	border-top-left-radius: 35px;
+}
+
+.esquina_redonda_der {
+	border-top-right-radius: 35px;
+}
+
+.esquina_red_abajo_izq {
+	border-bottom-left-radius: 35px;
+}
+
+.esquina_red_abajo_der {
+	border-bottom-right-radius: 35px;
+}
