@@ -77,15 +77,11 @@
 
 
 			function esperarTurno() {
-					// if (turno) {
-					// 		return turno;
-					// }
 
 			    setTimeout(function() { 
 			     $("#pensando").empty().html("<img src='img/InternetSlowdown_Day.gif' width='20%'>");
-			     // turno = true;
-			     // return turno;
-			    }, 1000);
+
+			    }, 2000);
 			    
 			}
 
