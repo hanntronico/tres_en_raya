@@ -19,3 +19,8 @@
 .esquina_red_abajo_der {
 	border-bottom-right-radius: 35px;
 }
+
+.centrado {
+	margin: 0px auto;
+	text-align: center;
+}
