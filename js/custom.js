@@ -27,7 +27,7 @@
 													 "background-repeat": "no-repeat",
 													 "background-size": "95%",
 													 "background-position": "center",
-													 "height": "75%"
+													 "height": "135px"
 													});
 						$("#pensando").empty();
 						turno = true;
@@ -37,14 +37,8 @@
 		    casillas.splice(casillas.indexOf(nueva_casilla), 1);
 		    turno = false;
 				
-				if (ganador_negras) {
-					alert('ganamos');
-					return false;
-				}else{
 
-		    	verifica3enraya('R', nueva_casilla);
-				}
-		    
+	    	verifica3enraya('R', nueva_casilla);
 
 			}
 
@@ -54,17 +48,15 @@
 
 				if ( turno ) {
 
-								$("#"+id).css({"background-image": "url('img/ficha_negra.png')", 
-															 "background-repeat": "no-repeat",
-															 "background-size": "95%",
-															 "background-position": "center",
-															 "height": "75%"
-															}); 
-								
+							$("#"+id).css({"background-image": "url('img/ficha_negra.png')", 
+														 "background-repeat": "no-repeat",
+														 "background-size": "95%",
+														 "background-position": "center",
+														 "height": "135px"
+														}); 
 							esperarTurno();
 							verifica3enraya('N', id);
 							mostrarFicha_roja(id);
-
 
 
 				}else{
@@ -79,9 +71,28 @@
 			function esperarTurno() {
 
 			    setTimeout(function() { 
-			     $("#pensando").empty().html("<img src='img/InternetSlowdown_Day.gif' width='20%'>");
+			     	$("#pensando").empty().html("<img src='img/InternetSlowdown_Day.gif' width='20%'>");
 
-			    }, 2000);
+			     	if(ganador_negras){
+							// alert("ganamos");
+							Swal.fire({
+							  title: 'GANASTE!!!',
+							  text: 'Felicitaciones has ganado la partida',
+							  icon: 'success',
+							  confirmButtonText: 'OK'
+							})
+							return false;
+						}else if (ganador_rojas){
+							Swal.fire({
+							  title: 'GANA ROJAS',
+							  text: 'Sigue intentando',
+							  icon: 'error',
+							  confirmButtonText: 'OK'
+							})	
+							return false;						
+						}
+
+			    }, 500);
 			    
 			}
 
@@ -100,21 +111,42 @@
 				// console.log(jugadas_negras.includes('a1'));
 
 				if(jugadas_negras.includes('a1') && jugadas_negras.includes('a2') && jugadas_negras.includes('a3')){
-						
-						// console.log('3 EN RAYA NEGRAS');
-						// alert('3 EN RAYA NEGRAS');
-						ganador_negras = true;
-
-
-				}else if(jugadas_rojas.includes('a1') && jugadas_rojas.includes('a2') && jugadas_rojas.includes('a3')){
-					// console.log('3 EN RAYA NEGRAS');
-					// alert('3 EN RAYA NEGRAS');
-					ganador_rojas = true;
-
-				}else if(jugadas_negras.includes('b1') && jugadas_negras.includes('b2') && jugadas_negras.includes('b3')){
-					console.log('3 EN RAYA NEGRAS');
-					alert('3 EN RAYA NEGRAS');
 					ganador_negras = true;
+				}else if(jugadas_rojas.includes('a1') && jugadas_rojas.includes('a2') && jugadas_rojas.includes('a3')){
+					ganador_rojas = true;
+				}else if(jugadas_negras.includes('b1') && jugadas_negras.includes('b2') && jugadas_negras.includes('b3')){
+					ganador_negras = true;
+				}else if(jugadas_rojas.includes('b1') && jugadas_rojas.includes('b2') && jugadas_rojas.includes('b3')){
+					ganador_rojas = true;
+				}else if(jugadas_negras.includes('c1') && jugadas_negras.includes('c2') && jugadas_negras.includes('c3')){
+					ganador_negras = true;
+				}else if(jugadas_rojas.includes('c1') && jugadas_rojas.includes('c2') && jugadas_rojas.includes('c3')){
+					ganador_rojas = true;
 				}
+
+				if(jugadas_negras.includes('a1') && jugadas_negras.includes('b1') && jugadas_negras.includes('c1')){
+					ganador_negras = true;
+				}else if(jugadas_rojas.includes('a1') && jugadas_rojas.includes('b1') && jugadas_rojas.includes('c1')){
+					ganador_rojas = true;
+				}else if(jugadas_negras.includes('a2') && jugadas_negras.includes('b2') && jugadas_negras.includes('c2')){
+					ganador_negras = true;
+				}else if(jugadas_rojas.includes('a2') && jugadas_rojas.includes('b2') && jugadas_rojas.includes('c2')){
+					ganador_rojas = true;
+				}else if(jugadas_negras.includes('a3') && jugadas_negras.includes('b3') && jugadas_negras.includes('c3')){
+					ganador_negras = true;
+				}else if(jugadas_rojas.includes('a3') && jugadas_rojas.includes('b3') && jugadas_rojas.includes('c3')){
+					ganador_rojas = true;
+				}
+
+				if(jugadas_negras.includes('a1') && jugadas_negras.includes('b2') && jugadas_negras.includes('c3')){
+					ganador_negras = true;
+				}else if(jugadas_rojas.includes('a1') && jugadas_rojas.includes('b2') && jugadas_rojas.includes('c3')){
+					ganador_rojas = true;
+				}else if(jugadas_negras.includes('a3') && jugadas_negras.includes('b2') && jugadas_negras.includes('c1')){
+					ganador_negras = true;
+				}else if(jugadas_rojas.includes('a3') && jugadas_rojas.includes('b2') && jugadas_rojas.includes('c1')){
+					ganador_rojas = true;
+				}				
+
 		
 			}
