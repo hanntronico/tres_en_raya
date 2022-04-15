@@ -24,3 +24,47 @@
 	margin: 0px auto;
 	text-align: center;
 }
+
+
+#padre{
+  position:relative;
+  /*background-color: green;*/
+}
+
+#h_1, #h_2, #h_3 {
+  position: absolute;
+  background-color: #FFFB95;
+  top: 80px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 48%;
+  height: 10px;
+}
+
+#h_2 {
+  top: 260px;
+}
+
+#h_3 {
+  top: 440px;
+}
+
+#v_1, #v_2, #v_3 {
+  position: absolute;
+  background-color: #FFFB95;
+  top: 20px;
+  left: 360px;
+  right: 0;
+  /*margin: 0 auto;*/
+  width: 10px;
+  height: 500px;	
+}
+
+#v_2 {
+  left: 550px;
+}
+
+#v_3 {
+  left: 740px;
+}
