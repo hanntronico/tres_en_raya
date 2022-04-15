@@ -67,7 +67,6 @@
 
 			}
 
-
 			function esperarTurno() {
 
 			    setTimeout(function() { 
@@ -81,6 +80,7 @@
 							  icon: 'success',
 							  confirmButtonText: 'OK'
 							})
+							// $("#h_1").css({"display": "block"});
 							return false;
 						}else if (ganador_rojas){
 							Swal.fire({
@@ -112,30 +112,42 @@
 
 				if(jugadas_negras.includes('a1') && jugadas_negras.includes('a2') && jugadas_negras.includes('a3')){
 					ganador_negras = true;
+					$("#h_1").css({"display": "block"});
 				}else if(jugadas_rojas.includes('a1') && jugadas_rojas.includes('a2') && jugadas_rojas.includes('a3')){
 					ganador_rojas = true;
+					$("#h_1").css({"display": "block"});
 				}else if(jugadas_negras.includes('b1') && jugadas_negras.includes('b2') && jugadas_negras.includes('b3')){
 					ganador_negras = true;
+					$("#h_2").css({"display": "block"});
 				}else if(jugadas_rojas.includes('b1') && jugadas_rojas.includes('b2') && jugadas_rojas.includes('b3')){
 					ganador_rojas = true;
+					$("#h_2").css({"display": "block"});
 				}else if(jugadas_negras.includes('c1') && jugadas_negras.includes('c2') && jugadas_negras.includes('c3')){
 					ganador_negras = true;
+					$("#h_3").css({"display": "block"});
 				}else if(jugadas_rojas.includes('c1') && jugadas_rojas.includes('c2') && jugadas_rojas.includes('c3')){
 					ganador_rojas = true;
+					$("#h_3").css({"display": "block"});
 				}
 
 				if(jugadas_negras.includes('a1') && jugadas_negras.includes('b1') && jugadas_negras.includes('c1')){
 					ganador_negras = true;
+					$("#v_1").css({"display": "block"});
 				}else if(jugadas_rojas.includes('a1') && jugadas_rojas.includes('b1') && jugadas_rojas.includes('c1')){
 					ganador_rojas = true;
+					$("#v_1").css({"display": "block"});
 				}else if(jugadas_negras.includes('a2') && jugadas_negras.includes('b2') && jugadas_negras.includes('c2')){
 					ganador_negras = true;
+					$("#v_2").css({"display": "block"});
 				}else if(jugadas_rojas.includes('a2') && jugadas_rojas.includes('b2') && jugadas_rojas.includes('c2')){
 					ganador_rojas = true;
+					$("#v_2").css({"display": "block"});
 				}else if(jugadas_negras.includes('a3') && jugadas_negras.includes('b3') && jugadas_negras.includes('c3')){
 					ganador_negras = true;
+					$("#v_3").css({"display": "block"});
 				}else if(jugadas_rojas.includes('a3') && jugadas_rojas.includes('b3') && jugadas_rojas.includes('c3')){
 					ganador_rojas = true;
+					$("#v_3").css({"display": "block"});
 				}
 
 				if(jugadas_negras.includes('a1') && jugadas_negras.includes('b2') && jugadas_negras.includes('c3')){
